@@ -90,7 +90,7 @@ class MainActivity : Activity() {
         val filtered = apps.filter { it.loadLabel(packageManager).toString().contains(query, true) }
         filtered.forEach { info ->
             val item = LinearLayout(this).apply { orientation = LinearLayout.VERTICAL; gravity = Gravity.CENTER; setPadding(dp(3), dp(8), dp(3), dp(12)); isClickable = true; isFocusable = true }
-            val icon = ImageView(this).apply { setImageDrawable(info.loadIcon(packageManager); scaleType = ImageView.ScaleType.FIT_CENTER; contentDescription = info.loadLabel(packageManager) }
+            val icon = ImageView(this).apply { setImageDrawable(info.loadIcon(packageManager)); scaleType = ImageView.ScaleType.FIT_CENTER; contentDescription = info.loadLabel(packageManager) }
             item.addView(icon, LinearLayout.LayoutParams(dp(48), dp(48)))
             val label = text(info.loadLabel(packageManager).toString(), 10f, white, false).apply { gravity = Gravity.CENTER; maxLines = 2; setPadding(0, dp(6), 0, 0) }
             item.addView(label, params(MATCH, WRAP))
