@@ -58,7 +58,7 @@ class MainActivity : Activity() {
         content.addView(card, params(MATCH, WRAP).apply { topMargin = dp(22); bottomMargin = dp(22) })
         search = EditText(this).apply {
             hint = "Search installed apps…"; setHintTextColor(muted); setTextColor(white); textSize = 14f
-            singleLine = true; setPadding(dp(15), 0, dp(15), 0); background = rounded(panel, 15)
+            setSingleLine(true); setPadding(dp(15), 0, dp(15), 0); background = rounded(panel, 15)
             addTextChangedListener(object : TextWatcher {
                 override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
                 override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) { renderApps(s?.toString().orEmpty()) }
